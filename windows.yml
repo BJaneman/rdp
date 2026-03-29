@@ -1,0 +1,17 @@
+services:
+  windows:
+    image: dockurr/windows
+    container_name: windows
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+    volumes:
+      - ./storage:/storage
+    environment:
+      VERSION: "8e"  # 'l' is for the Lightweight version (faster)
+      RAM_SIZE: "4G"
+      CPU_CORES: "4"
+      DISK_SIZE: "256G"
